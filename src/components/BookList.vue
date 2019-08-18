@@ -20,9 +20,9 @@ export default {
       title: "All Books",
       states: ["Want to Read", "Read", "Reading"],
       books: [
-        { title: "Self-Reliance", author: "Ralph Waldo Emerson", finsihedReading: true },
-        { title: "American Gods", author: "Neil Gaiman", finsihedReading: false },
-        { title: "Amusing Ourselves to Death", author: "Neil Postman",finsihedReading: true }
+        { title: "Self-Reliance", author: "Ralph Waldo Emerson", finishedReading: true },
+        { title: "American Gods", author: "Neil Gaiman", finishedReading: false },
+        { title: "Amusing Ourselves to Death", author: "Neil Postman",finishedReading: true }
       ]
     };
   },
@@ -36,7 +36,7 @@ export default {
         {
           title: bookData.bookTitle,
           author: bookData.bookAuthor,
-          finsihedReading:bookData.finsihedReading
+          finishedReading:bookData.finishedReading
         }
       );
     }
