@@ -5,7 +5,7 @@
       <book-item v-for='book in books' :key='book.id' :book='book'></book-item>
     </ul>
     <br><hr>
-    <book-form @addBook='appendBook'></book-form>
+    <book-form v-on:addBook='appendBook'></book-form>
   </div>
 </template>
 
@@ -20,9 +20,9 @@ export default {
       title: "All Books",
       states: ["Want to Read", "Read", "Reading"],
       books: [
-        { title: "Self-Reliance", author: "Ralph Waldo Emerson" },
-        { title: "American Gods", author: "Neil Gaiman" },
-        { title: "Amusing Ourselves to Death", author: "Neil Postman" }
+        { title: "Self-Reliance", author: "Ralph Waldo Emerson", finsihedReading: true },
+        { title: "American Gods", author: "Neil Gaiman", finsihedReading: false },
+        { title: "Amusing Ourselves to Death", author: "Neil Postman",finsihedReading: true }
       ]
     };
   },
@@ -31,8 +31,14 @@ export default {
     BookForm
   },
   methods: {
-    appendBook(bookTitle, bookAuthor) {
-      this.books.push({ title: bookTitle, author: bookAuthor });
+    appendBook(bookData) {
+      this.books.push(
+        {
+          title: bookData.bookTitle,
+          author: bookData.bookAuthor,
+          finsihedReading:bookData.finsihedReading
+        }
+      );
     }
   }
 };
